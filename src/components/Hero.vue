@@ -83,11 +83,11 @@ const onIconError = () => (iconLoaded.value = false)
 
         <div class="md:col-span-9 space-y-5 text-neutral-300 leading-loose max-w-2xl">
           <p class="text-sm md:text-base">
-            ボカロP / 作曲家 / バンドマン / ソフトウェアエンジニア<br />
-            キャッチーなメロディと多彩なサウンドメイクを得意とし、これまでに発表した楽曲は一万回以上再生されている。
+            ボカロP / 作曲家 / ギタリスト / ソフトウェアエンジニア<br />
+            キャッチーなメロディと多彩なサウンドメイクを得意とし、明るくも切ない歌詞観で惹きつけている。
           </p>
           <p class="text-sm md:text-base text-neutral-400">
-            ボーカロイドを軸にオリジナル曲を発表しつつ、「メモラブル」のコンポーザー兼ギタリストとしてライブ活動、アーティストへの楽曲提供、音楽制作用エフェクトVSTプラグインの開発なども行う。
+            ボーカロイドを軸にオリジナル曲を発表しつつ、「メモラブル」のコンポーザー兼ギタリストとしてバンド活動、アーティストへの楽曲提供、ソフトウェアの開発なども行う。
           </p>
           <p class="font-mono text-[11px] md:text-xs text-neutral-500 pt-2">
             // silence &amp; signal — code, sound, and the space between.

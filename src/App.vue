@@ -2,11 +2,13 @@
 import Hero from './components/Hero.vue'
 import Release from './components/Release.vue'
 import Works from './components/Works.vue'
+import Products from './components/Products.vue'
 import SNS from './components/SNS.vue'
 
 const nav = [
   { id: 'release', label: 'Release' },
   { id: 'works', label: 'Works' },
+  { id: 'products', label: 'Products' },
   { id: 'sns', label: 'Contact' },
 ]
 </script>
@@ -40,6 +42,7 @@ const nav = [
       <Hero />
       <Release />
       <Works />
+      <Products />
       <SNS />
     </main>
   </div>
