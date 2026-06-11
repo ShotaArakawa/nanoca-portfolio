@@ -28,11 +28,11 @@ index.html
       └── App.vue
             ├── <header>  固定ナビゲーション
             └── <main>
-                  ├── Hero.vue       #hero        プロフィール・アイコン・キャッチコピー
-                  ├── Release.vue    #release     01: 最新曲・人気曲（YouTube 埋め込み）
-                  ├── Works.vue      #works       02: 楽曲提供実績（YouTube 埋め込み）
-                  ├── Products.vue   #it-portfolio 03: IT ポートフォリオリンク
-                  └── SNS.vue        #sns         04: Contact（メール + SNS リンク + Footer）
+                  ├── Hero.vue       #hero          プロフィール・アイコン・キャッチコピー
+                  ├── Release.vue    #release       01: Popular 大表示 + All Tracks 横スクロール
+                  ├── Works.vue      #works         02: 楽曲提供実績（YouTube 埋め込み）
+                  ├── Products.vue   #it-portfolio  03: IT ポートフォリオリンク
+                  └── SNS.vue        #sns           04: Contact（メール + SNS リンク + Footer）
 ```
 
 ---
@@ -47,15 +47,13 @@ nanoca-portfolio/
 ├── src/
 │   ├── assets/
 │   │   ├── hero.png
-│   │   ├── icon.png              # プロフィールアイコン
-│   │   ├── music-tracker-mockup.png
-│   │   ├── vite.svg
-│   │   └── vue.svg
+│   │   ├── icon.png
+│   │   └── music-tracker-mockup.png
 │   ├── components/
 │   │   ├── Hero.vue
 │   │   ├── Release.vue
 │   │   ├── Works.vue
-│   │   ├── Products.vue          # IT Portfolio セクション
+│   │   ├── Products.vue       # IT Portfolio セクション
 │   │   └── SNS.vue
 │   ├── App.vue
 │   ├── main.js
@@ -71,21 +69,28 @@ nanoca-portfolio/
 
 ## コンテンツの更新方法
 
-### 最新曲・人気曲を変更する（Release.vue）
+### Popular を変更する（Release.vue）
 
-`src/components/Release.vue` の `releases` 配列の `youtubeId` を差し替えるだけです。
+`src/components/Release.vue` の `popular` オブジェクトを差し替えます。
 
 ```js
-const releases = [
-  {
-    label: 'Latest',
-    title: '曲名',
-    type: 'Original Song / MV',
-    date: '2026',
-    youtubeId: 'xxxxxxxxxx', // YouTube URL の v= 以降
-  },
-  ...
-]
+const popular = {
+  title: "曲名",
+  type: "Original Song / MV",
+  year: "2025",
+  youtubeId: "xxxxxxxxxx", // YouTube URL の v= 以降
+};
+```
+
+### 新曲を All Tracks に追加する（Release.vue）
+
+`tracks` 配列の**先頭**にオブジェクトを追加します。
+
+```js
+const tracks = [
+  { title: "新曲タイトル", year: "2026", youtubeId: "xxxxxxxxxx" }, // ← 先頭に追加
+  { title: "水中呼吸", year: "2025", youtubeId: "qaNpWHmamJc" },
+];
 ```
 
 ### 楽曲提供実績を追加する（Works.vue）
