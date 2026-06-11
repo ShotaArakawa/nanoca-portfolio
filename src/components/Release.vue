@@ -1,32 +1,14 @@
 <script setup>
-// =========================================================
-// 楽曲埋め込みリスト。
-// youtubeId を実際の動画ID（YouTube URL の v= の後ろ／short URL の末尾）に
-// 差し替えれば、そのまま埋め込みが切り替わります。
-//
-//   例: https://www.youtube.com/watch?v=qaNpWHmamJc → 'qaNpWHmamJc'
-//        https://youtu.be/qaNpWHmamJc               → 'qaNpWHmamJc'
-// =========================================================
-const releases = [
-  {
-    label: 'Latest',
-    caption: '最新曲',
-    title: '水中呼吸',
-    type: 'Original Song / MV',
-    year: '2026',
-    // ★ 最新曲の動画IDをここに貼り替えてください ★
-    // 現在は仮で「水中呼吸」と同じIDを設定しています。
-    youtubeId: 'qaNpWHmamJc',
-  },
-  {
-    label: 'Popular',
-    caption: '人気曲',
-    title: '水中呼吸',
-    type: 'Original Song / MV',
-    year: '2025',
-    // 人気曲：水中呼吸
-    youtubeId: 'qaNpWHmamJc',
-  },
+const popular = {
+  title: '水中呼吸',
+  type: 'Original Song / MV',
+  year: '2025',
+  youtubeId: 'qaNpWHmamJc',
+}
+
+const tracks = [
+  { title: '水中呼吸', year: '2026', youtubeId: 'qaNpWHmamJc' },
+  // 新曲が出たら先頭に追加
 ]
 </script>
 
@@ -44,49 +26,65 @@ const releases = [
         ヘッドフォン推奨。
       </p>
 
-      <div class="grid md:grid-cols-2 gap-10 md:gap-14">
-        <article
-          v-for="r in releases"
-          :key="r.label"
-          class="group"
-        >
-          <div class="flex items-baseline justify-between mb-4">
-            <span
-              class="font-mono text-[10px] md:text-xs tracking-widestest uppercase text-accent-cyan"
-            >
-              {{ r.label }}
-            </span>
-            <span class="font-mono text-[10px] md:text-xs text-neutral-500">
-              {{ r.caption }}
-            </span>
+      <!-- Popular -->
+      <div class="mb-16 md:mb-20">
+        <span class="font-mono text-[10px] md:text-xs tracking-widestest uppercase text-accent-cyan block mb-4">
+          Popular
+        </span>
+        <div class="relative aspect-video w-full max-w-2xl overflow-hidden rounded-sm border border-white/10 bg-zinc-900">
+          <iframe
+            class="absolute inset-0 w-full h-full"
+            :src="`https://www.youtube.com/embed/${popular.youtubeId}`"
+            :title="popular.title"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
+        <div class="mt-5 max-w-2xl flex items-baseline justify-between gap-4">
+          <div>
+            <h3 class="text-lg md:text-xl font-display font-light text-white">
+              {{ popular.title }}
+            </h3>
+            <p class="mt-1 font-mono text-[11px] text-neutral-500 tracking-wider">
+              {{ popular.type }}
+            </p>
           </div>
-
-          <div
-            class="relative aspect-video w-full overflow-hidden rounded-sm border border-white/10 bg-zinc-900 transition-shadow group-hover:border-white/20"
-          >
-            <iframe
-              class="absolute inset-0 w-full h-full"
-              :src="`https://www.youtube.com/embed/${r.youtubeId}`"
-              :title="r.title"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            />
-          </div>
-
-          <div class="mt-5 flex items-baseline justify-between gap-4">
-            <div>
-              <h3 class="text-lg md:text-xl font-display font-light text-white">
-                {{ r.title }}
-              </h3>
-              <p class="mt-1 font-mono text-[11px] text-neutral-500 tracking-wider">
-                {{ r.type }}
-              </p>
-            </div>
-            <span class="font-mono text-[11px] text-neutral-400">{{ r.year }}</span>
-          </div>
-        </article>
+          <span class="font-mono text-[11px] text-neutral-400">{{ popular.year }}</span>
+        </div>
       </div>
+
+      <!-- All Tracks -->
+      <div>
+        <span class="font-mono text-[10px] md:text-xs tracking-widestest uppercase text-accent-cyan block mb-6">
+          All Tracks
+        </span>
+        <div class="flex gap-5 overflow-x-auto pb-4 -mx-4 px-4 md:-mx-8 md:px-8 snap-x snap-mandatory">
+          <article
+            v-for="t in tracks"
+            :key="t.youtubeId"
+            class="shrink-0 w-[72vw] md:w-80 snap-start"
+          >
+            <div class="relative aspect-video w-full overflow-hidden rounded-sm border border-white/10 bg-zinc-900 hover:border-white/20 transition-colors">
+              <iframe
+                class="absolute inset-0 w-full h-full"
+                :src="`https://www.youtube.com/embed/${t.youtubeId}`"
+                :title="t.title"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              />
+            </div>
+            <div class="mt-3 flex items-baseline justify-between gap-4">
+              <h4 class="text-sm md:text-base font-display font-light text-white">
+                {{ t.title }}
+              </h4>
+              <span class="font-mono text-[11px] text-neutral-400 shrink-0">{{ t.year }}</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>
