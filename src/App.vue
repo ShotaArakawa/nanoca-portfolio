@@ -8,7 +8,7 @@ import SNS from './components/SNS.vue'
 const nav = [
   { id: 'release', label: 'Release' },
   { id: 'works', label: 'Works' },
-  { id: 'products', label: 'Products' },
+  { id: 'it-portfolio', label: 'IT Portfolio' },
   { id: 'sns', label: 'Contact' },
 ]
 </script>

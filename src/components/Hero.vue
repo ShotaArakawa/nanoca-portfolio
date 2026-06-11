@@ -90,7 +90,10 @@ const onIconError = () => (iconLoaded.value = false)
             ボーカロイドを軸にオリジナル曲を発表しつつ、「メモラブル」のコンポーザー兼ギタリストとしてバンド活動、アーティストへの楽曲提供、ソフトウェアの開発なども行う。
           </p>
           <p class="font-mono text-[11px] md:text-xs text-neutral-500 pt-2">
-            // silence &amp; signal — code, sound, and the space between.
+            // Vocaloid Producer / Composer / Guitarist / Software Engineer
+            Known for catchy melodies and diverse soundscapes, he captivates listeners with lyrics that are both uplifting and poignant.
+
+            While releasing original songs centered around Vocaloid, he also performs with the band “Memorable” as a composer and guitarist, writes songs for other artists, and develops software.
           </p>
         </div>
       </div>
@@ -100,7 +103,7 @@ const onIconError = () => (iconLoaded.value = false)
       >
         <span class="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
         <span class="tracking-widest uppercase">
-          now playing — "midnight signal"
+          now playing — "水中呼吸"
         </span>
       </div>
     </div>
