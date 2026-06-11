@@ -9,14 +9,14 @@ Vue 3 + Vite + Tailwind CSS で構築し、Vercel で公開しています。
 
 ## 技術スタック
 
-| 役割 | 技術 |
-|---|---|
+| 役割              | 技術                                       |
+| ----------------- | ------------------------------------------ |
 | UI フレームワーク | Vue 3 (Composition API / `<script setup>`) |
-| ビルドツール | Vite 8 |
-| スタイリング | Tailwind CSS v3 |
-| CSS 後処理 | PostCSS + Autoprefixer |
-| 言語 | JavaScript (TypeScript なし) |
-| ホスティング | Vercel |
+| ビルドツール      | Vite 8                                     |
+| スタイリング      | Tailwind CSS v3                            |
+| CSS 後処理        | PostCSS + Autoprefixer                     |
+| 言語              | JavaScript (TypeScript なし)               |
+| ホスティング      | Vercel                                     |
 
 ---
 
@@ -81,7 +81,7 @@ const releases = [
     label: 'Latest',
     title: '曲名',
     type: 'Original Song / MV',
-    year: '2026',
+    date: '2026',
     youtubeId: 'xxxxxxxxxx', // YouTube URL の v= 以降
   },
   ...
@@ -95,13 +95,13 @@ const releases = [
 ```js
 const works = [
   {
-    date: '2026/5/28',
-    label: 'Release',
-    title: '曲名 ／ アーティスト名',
-    role: '作詞・作編曲',
-    youtubeId: 'xxxxxxxxxx',
+    date: "2026/5/28",
+    label: "Release",
+    title: "曲名 ／ アーティスト名",
+    role: "作詞・作編曲",
+    youtubeId: "xxxxxxxxxx",
   },
-]
+];
 ```
 
 ### SNS・連絡先を変更する（SNS.vue）

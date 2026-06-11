@@ -2,13 +2,23 @@
 const popular = {
   title: '水中呼吸',
   type: 'Original Song / MV',
-  year: '2025',
+  date: '2023/7/16',
   youtubeId: 'qaNpWHmamJc',
 }
 
 const tracks = [
-  { title: '水中呼吸', year: '2026', youtubeId: 'qaNpWHmamJc' },
   // 新曲が出たら先頭に追加
+  { title: '水中呼吸 / kafu feat. 夏亀 - underwater breath', date: '2023/7/16', youtubeId: 'qaNpWHmamJc' },
+  { title: 'デカダンス / Flower - décadence', date: '2023/5/28', youtubeId: 'DcWsgYUfbkY' },
+  { title: '四月になれば / 可不', date: '2023/4/14', youtubeId: 'oY177RexKh0' },
+  { title: 'anxious umbrella / 初音ミク', date: '2022/12/16', youtubeId: 'ECgMVtTZ2aQ' },
+  { title: '独白体 - kafu', date: '2022/4/24', youtubeId: 'VyYIrSBycT0' },
+  { title: 'Paranoia / 初音ミク&IA', date: '2022/4/24', youtubeId: 'eBVZWbDvO4o' },
+  { title: '濡れ衣 / 初音ミク', date: '2022/1/30', youtubeId: 'y6u3EGmT0pw' },
+  { title: '不文律 - kafu', date: '2021/11/03', youtubeId: 'LkKDhS8mgXs' },
+  { title: 'コンセント少女 / 初音ミク', date: '2021/4/25', youtubeId: 'iHHh8rEDzxI' },
+  { title: '透過線 - IA', date: '2021/3/17', youtubeId: 'vLg5BKKG664' },
+  { title: 'Sorrow / 初音ミク', date: '2021/2/20', youtubeId: 'ULK4qoQnAN8' },
 ]
 </script>
 
@@ -22,8 +32,7 @@ const tracks = [
       </div>
 
       <p class="text-neutral-400 mb-12 md:mb-16 max-w-xl leading-relaxed text-sm md:text-base">
-        最新曲と、よく聴かれているトラックを置いています。<br />
-        ヘッドフォン推奨。
+        よく聴かれている曲と投稿曲を置いています。
       </p>
 
       <!-- Popular -->
@@ -50,7 +59,7 @@ const tracks = [
               {{ popular.type }}
             </p>
           </div>
-          <span class="font-mono text-[11px] text-neutral-400">{{ popular.year }}</span>
+          <span class="font-mono text-[11px] text-neutral-400">{{ popular.date }}</span>
         </div>
       </div>
 
@@ -79,7 +88,7 @@ const tracks = [
               <h4 class="text-sm md:text-base font-display font-light text-white">
                 {{ t.title }}
               </h4>
-              <span class="font-mono text-[11px] text-neutral-400 shrink-0">{{ t.year }}</span>
+              <span class="font-mono text-[11px] text-neutral-400 shrink-0">{{ t.date }}</span>
             </div>
           </article>
         </div>

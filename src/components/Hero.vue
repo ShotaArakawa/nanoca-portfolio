@@ -91,9 +91,6 @@ const onIconError = () => (iconLoaded.value = false)
           </p>
           <p class="font-mono text-[11px] md:text-xs text-neutral-500 pt-2">
             // Vocaloid Producer / Composer / Guitarist / Software Engineer
-            Known for catchy melodies and diverse soundscapes, he captivates listeners with lyrics that are both uplifting and poignant.
-
-            While releasing original songs centered around Vocaloid, he also performs with the band “Memorable” as a composer and guitarist, writes songs for other artists, and develops software.
           </p>
         </div>
       </div>
